@@ -63,25 +63,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         pager = (ViewPager) Menu.findViewById(R.id.pager);
         pagerAdapter = new ViewpagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
+        pager.setOffscreenPageLimit(3);
         pager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 tabHost.setSelectedNavigationItem(position);
-                switch (position) {
-                    case 0:
-                        title.setText(getResources().getString(R.string.online));
-                        break;
-                    case 1:
-                        title.setText(getResources().getString(R.string.offline));
-                        break;
-                    case 2:
-                        title.setText(getResources().getString(R.string.settings));
-                        break;
-                }
-            }
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
 
