@@ -4,4 +4,7 @@
     <string name="offline">OFF-LINE</string>
     <string name="history">HISTORY</string>
     <string name="settings">SETTINGS</string>
+    <string name="senderID">moongoon-1039</string>
+    <string name="senderNumber">687668235350</string>
+    <string name="update">"첫실행!"</string>
 </resources>

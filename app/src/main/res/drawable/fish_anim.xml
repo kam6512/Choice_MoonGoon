@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/fish_1"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_2"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_3"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_4"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_5"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_6"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_7"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_8"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_9"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_10"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_11"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_12"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_13"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_14"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_15"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_16"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_17"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_18"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_19"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_20"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_21"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_22"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_23"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_24"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_25"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_26"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_27"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_28"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_29"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_30"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_31"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_32"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_33"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_34"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_35"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_36"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_37"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_38"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_39"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_40"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_41"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_42"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_44"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_45"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_46"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_47"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_48"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_49"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_50"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_51"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_52"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_53"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_54"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_55"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_56"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_57"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_58"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_59"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_60"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_61"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_62"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_63"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_64"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_65"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_66"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_67"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_68"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_69"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_70"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_71"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_72"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_73"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_74"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_75"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_76"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_77"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_78"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_79"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_80"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_81"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_82"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_83"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_84"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_85"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_86"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_87"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_88"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_89"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_90"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_91"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_92"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_93"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_94"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_95"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_96"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_97"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_98"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_99"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_100"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_101"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_102"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_103"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_104"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_105"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_106"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_107"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_108"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_109"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_110"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_111"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_112"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_113"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/fish_114"
+        android:duration="30" />
+
+
+</animation-list>

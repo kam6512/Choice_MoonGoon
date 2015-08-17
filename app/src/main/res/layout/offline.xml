@@ -11,8 +11,16 @@
         android:layout_centerHorizontal="true"
         android:scaleType="fitXY"
         android:adjustViewBounds="false"
-        android:background="@drawable/main_offline" />
+       />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fish_offline"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="189dp" />
 
 
 </RelativeLayout>

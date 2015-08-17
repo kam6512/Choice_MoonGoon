@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/character_anim1" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim2" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim3" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim4" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim5" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim6" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim7" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim8" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim9" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim10" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim11" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim12" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim13" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim14" android:duration="100"/>
+    <item android:drawable="@drawable/character_anim15" android:duration="100"/>
+
+
+</animation-list>
