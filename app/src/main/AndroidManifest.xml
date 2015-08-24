@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".test" >
+        <activity android:name=".FirstUserInfo" >
         </activity>
 
         <!-- [START gcm_receiver] GCM을 받았을 때 동작하기 위한 리시버 -->
@@ -74,7 +74,6 @@
             android:exported="false" >
         </service>
         <!-- [END gcm_registration_service] -->
-
 
     </application>
 

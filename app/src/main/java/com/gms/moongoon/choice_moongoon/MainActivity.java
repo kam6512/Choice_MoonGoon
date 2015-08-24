@@ -10,6 +10,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -30,6 +31,7 @@ import android.widget.TextView;
 import com.gms.moongoon.choice_moongoon.GCM_Manage.GCM_SERVER;
 import com.gms.moongoon.choice_moongoon.GCM_Manage.GcmQuickStartPreference;
 import com.gms.moongoon.choice_moongoon.GCM_Manage.GcmRegisterIntentService;
+import com.gms.moongoon.choice_moongoon.GET_POST.PostServer;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
@@ -48,11 +50,20 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     private BroadcastReceiver mRegistrationBroadcastReceiver;
 
+    SharedPreferences pref;
+    SharedPreferences.Editor edit;
+    String sex = null;
+    String age = null;
+    String token = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(android.R.style.Theme_Holo_Light_NoActionBar_TranslucentDecor);
         setContentView(R.layout.activity_main);
+
+        pref = getSharedPreferences("VER", MODE_PRIVATE);
+        edit = pref.edit();
 
         res = getResources();
 
@@ -74,8 +85,6 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
             public void onPageSelected(int position) {
                 tabHost.setSelectedNavigationItem(position);
             }
-
-
         });
 
         for (int i = 0; i < pagerAdapter.getCount(); i++) {
@@ -85,10 +94,9 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         }
 
         getFirstExe();
-        registBroadcastReceiver();
-        getInstanceIDToken();
 
-        new GCM_SERVER();
+
+//        new GCM_SERVER();
     }
 
     @Override
@@ -142,15 +150,46 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
                 } else if (action.equals(GcmQuickStartPreference.REGISTRATION_COMPLETE)) {
                     // 액션이 COMPLETE일 경우
-                    String token = intent.getStringExtra("token");
-                    Snackbar.make(getWindow().getDecorView(), token, Snackbar.LENGTH_SHORT).show();
+                    token = intent.getStringExtra("token");
+                    String[] params = new String[3];
+                    params[0] = token;
+                    params[1] = sex;
+                    params[2] = age;
+
+
+                    Log.e("params", params[0] + "/" + params[1] + "/" + params[2]);
+
+
+                    if (token != null) {
+                        edit.putBoolean("Enable", true);
+                        edit.putString("GCM", token);
+                        edit.putString("sex", sex);
+                        edit.putString("age", age);
+
+                        edit.commit();
+
+                        new PostServer().execute(params);
+                    } else {
+                        Snackbar.make(getWindow().getDecorView(), "GCM코드를 받아오지 못했습니다. (2초 뒤 종료)", Snackbar.LENGTH_SHORT).show();
+                        edit.putBoolean("Enable", false);
+                        edit.commit();
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                finish();
+                            }
+                        }, 2000);
+                    }
+
+
                 }
             }
         };
     }
 
     public void getFirstExe() {
-        SharedPreferences pref = getSharedPreferences("VER", 0);
+
 
         try {
             PackageManager pm = this.getPackageManager();
@@ -158,10 +197,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
             int VERSION = packageInfo.versionCode;
             int old_Ver = pref.getInt("version", 0);
 
+
             if (old_Ver < VERSION) {
                 TextView msg = new TextView(this);
                 msg.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-                msg.setTextColor(0xffffffff);
+                msg.setTextColor(0x00000000);
                 msg.setText(R.string.update);
 
                 new AlertDialog.Builder(this)
@@ -170,13 +210,22 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                         .setPositiveButton("확인", null)
                         .show();
 
-                SharedPreferences.Editor edit = pref.edit();
                 edit.putInt("version", VERSION);
                 edit.commit();
+
+                Boolean enable = pref.getBoolean("Enable", false);
+                if (enable) {
+                    Snackbar.make(getWindow().getDecorView(),"인증된 사용자 입니다",Snackbar.LENGTH_SHORT).show();
+                } else {
+                    startActivityForResult(new Intent(MainActivity.this, FirstUserInfo.class), 1);
+                }
+
             }
 
         } catch (Exception e) {
         }
+
+
     }
 
     private boolean checkPlayService() {
@@ -196,6 +245,22 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         return true;
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (resultCode == RESULT_OK) {
+            sex = data.getStringExtra("sex");
+            age = data.getStringExtra("age");
+
+            Log.e("params", sex + "/" + age);
+
+            registBroadcastReceiver();
+            getInstanceIDToken();
+        }
+    }
 
     class ViewpagerAdapter extends FragmentStatePagerAdapter {
         public ViewpagerAdapter(FragmentManager fm) {
