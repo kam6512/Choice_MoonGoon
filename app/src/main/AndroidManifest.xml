@@ -16,6 +16,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
+        android:windowSoftInputMode="adjustResize|adjustPan"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
@@ -27,6 +28,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".FirstUserInfo" >
+        </activity>
+        <activity android:name=".SendActivity"
+            android:orientation="vertical">
         </activity>
 
         <!-- [START gcm_receiver] GCM을 받았을 때 동작하기 위한 리시버 -->

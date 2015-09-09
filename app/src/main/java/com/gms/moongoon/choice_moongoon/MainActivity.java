@@ -188,6 +188,12 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         };
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.gc();
+    }
+
     public void getFirstExe() {
 
 
@@ -213,13 +219,13 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                 edit.putInt("version", VERSION);
                 edit.commit();
 
-                Boolean enable = pref.getBoolean("Enable", false);
-                if (enable) {
-                    Snackbar.make(getWindow().getDecorView(),"인증된 사용자 입니다",Snackbar.LENGTH_SHORT).show();
-                } else {
-                    startActivityForResult(new Intent(MainActivity.this, FirstUserInfo.class), 1);
-                }
+            }
 
+            Boolean enable = pref.getBoolean("Enable", false);
+            if (enable) {
+                Snackbar.make(getWindow().getDecorView(),"인증된 사용자 입니다",Snackbar.LENGTH_SHORT).show();
+            } else {
+                startActivityForResult(new Intent(MainActivity.this, FirstUserInfo.class), 1);
             }
 
         } catch (Exception e) {
@@ -276,10 +282,10 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                 case 1:
                     return new OffLine_Fragment();
                 case 2:
-                    return new OnLine_Fragment();
+                    return new OffLine_Fragment();
 
                 default:
-                    return new OnLine_Fragment();
+                    return new OffLine_Fragment();
             }
 
         }

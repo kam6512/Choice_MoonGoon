@@ -72,6 +72,7 @@ public class FirstUserInfo extends AppCompatActivity implements RadioButton.OnCl
                 }
             }
         });
+
     }
 
     private RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {

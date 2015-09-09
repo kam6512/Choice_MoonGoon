@@ -15,6 +15,8 @@ import org.apache.http.params.HttpParams;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by user on 2015-08-18.
@@ -36,6 +38,7 @@ public class PostServer extends AsyncTask<String, Void, Void> {
         postUserInfoVales.add(new BasicNameValuePair("age", age));
         postUserInfoVales.add(new BasicNameValuePair("sex", sex));
         postUserInfoVales.add(new BasicNameValuePair("gcm", gcmID));
+
 
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(SERVER_SECURITY.postUrl);
