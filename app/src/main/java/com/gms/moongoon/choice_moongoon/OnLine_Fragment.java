@@ -16,8 +16,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.gms.moongoon.choice_moongoon.GCM_Manage.GCM_SERVER;
 import com.gms.moongoon.choice_moongoon.GET_POST.GetServer;
+import com.gms.moongoon.choice_moongoon.tools.DecodeJson;
 import com.gms.moongoon.choice_moongoon.tools.Loading_Image;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * Created by user on 2015-08-08.
@@ -29,6 +34,7 @@ public class OnLine_Fragment extends Fragment implements View.OnClickListener {
 
     Button mainSend, receiveAnswer, receiveQuestion;
     View view;
+
 
     public static Handler handler;
 
@@ -44,16 +50,17 @@ public class OnLine_Fragment extends Fragment implements View.OnClickListener {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                if(msg.what == 0){
-                    Log.e("get",msg.getData().getString("res"));
+                if (msg.what == 0) {
+                    MainActivity.userRes = msg.getData().getString("res");
                     Snackbar.make(view, "유저목록로딩완료", Snackbar.LENGTH_SHORT).show();
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            startActivity(new Intent(OnLine_Fragment.this.getActivity(),SendActivity.class));
+                            getActivity().startActivityForResult(new Intent(OnLine_Fragment.this.getActivity(), SendActivity.class), 0);
                         }
-                    },1000);
-                }else{
+                    }, 1000);
+                } else {
+                    MainActivity.userRes = msg.getData().getString("");
                     Snackbar.make(view, "유저목록을 가져오지 못했습니다.", Snackbar.LENGTH_SHORT).show();
                 }
             }
@@ -101,4 +108,8 @@ public class OnLine_Fragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.backGround_online).setBackground(null);
         System.gc();
     }
+
+
+
+
 }

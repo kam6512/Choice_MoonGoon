@@ -32,8 +32,12 @@ import com.gms.moongoon.choice_moongoon.GCM_Manage.GCM_SERVER;
 import com.gms.moongoon.choice_moongoon.GCM_Manage.GcmQuickStartPreference;
 import com.gms.moongoon.choice_moongoon.GCM_Manage.GcmRegisterIntentService;
 import com.gms.moongoon.choice_moongoon.GET_POST.PostServer;
+import com.gms.moongoon.choice_moongoon.tools.DecodeJson;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
@@ -42,6 +46,7 @@ import it.neokree.materialtabs.MaterialTabListener;
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
 
     Toolbar toolbar;
+    View view;
 
     ViewPager pager;
     ViewpagerAdapter pagerAdapter;
@@ -56,11 +61,14 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     String age = null;
     String token = null;
 
+    public static String userRes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(android.R.style.Theme_Holo_Light_NoActionBar_TranslucentDecor);
         setContentView(R.layout.activity_main);
+        view = getWindow().getDecorView();
 
         pref = getSharedPreferences("VER", MODE_PRIVATE);
         edit = pref.edit();
@@ -223,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
             Boolean enable = pref.getBoolean("Enable", false);
             if (enable) {
-                Snackbar.make(getWindow().getDecorView(),"인증된 사용자 입니다",Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(getWindow().getDecorView(), "인증된 사용자 입니다", Snackbar.LENGTH_SHORT).show();
             } else {
                 startActivityForResult(new Intent(MainActivity.this, FirstUserInfo.class), 1);
             }
@@ -255,7 +263,14 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 //        super.onActivityResult(requestCode, resultCode, data);
+        Snackbar.make(view, "onActivityResult", Snackbar.LENGTH_SHORT).show();
+        switch (resultCode) {
+            case 0:
 
+                data.getExtras().getString("res");
+                new DecodeJson().decodeJson(MainActivity.userRes, view);
+                break;
+        }
 
         if (resultCode == RESULT_OK) {
             sex = data.getStringExtra("sex");
@@ -322,4 +337,6 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         }
         return null;
     }
+
+
 }

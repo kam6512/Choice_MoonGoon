@@ -23,9 +23,10 @@ public class GCM_SERVER {
     private String API = null;
     private String arg1 = null;
 
-    public GCM_SERVER(){
+    public GCM_SERVER(String token){
         API = "AIzaSyChGfoWsxgpkc74g8Bx0Zd_naAumBAQ5_0";
-        token = "e-siVUhNN1E:APA91bFxWcrKPWl40uMZQafcw2uVXSBhscUPPngZTf0GTLkKmrCTW_ca8JjMgacb0L1nAyfeqZrDVYwpJJwpNbOGkMlEGnryHKr72zCwXpIbUFQP6iHjtqeMUCytDULIFd9YOYlLd4LM";
+        this.token = token;
+//        token = "e-siVUhNN1E:APA91bFxWcrKPWl40uMZQafcw2uVXSBhscUPPngZTf0GTLkKmrCTW_ca8JjMgacb0L1nAyfeqZrDVYwpJJwpNbOGkMlEGnryHKr72zCwXpIbUFQP6iHjtqeMUCytDULIFd9YOYlLd4LM";
         PostThread postThread = new PostThread();
         postThread.start();
     }
