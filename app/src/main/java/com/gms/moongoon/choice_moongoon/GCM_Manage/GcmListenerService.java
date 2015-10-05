@@ -21,7 +21,12 @@ public class GcmListenerService extends com.google.android.gms.gcm.GcmListenerSe
     public void onMessageReceived(String from, Bundle data) {
         String title = data.getString("msg");
 
-        sendNotification(title,title);
+        if (data.getString("isQuestion").equals("yes")){
+            sendNotification(title,title);
+        }else{
+            sendNotification(title,title);
+        }
+
     }
 
     private void sendNotification(String title, String message) {
@@ -32,7 +37,7 @@ public class GcmListenerService extends com.google.android.gms.gcm.GcmListenerSe
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.fish_1)
+                .setSmallIcon(R.drawable.right_arrow)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setAutoCancel(true)

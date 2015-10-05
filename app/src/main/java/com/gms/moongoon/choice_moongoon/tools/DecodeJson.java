@@ -12,7 +12,7 @@ import org.json.JSONObject;
  * Created by user on 2015-09-09.
  */
 public class DecodeJson {
-    public void decodeJson(String userRes,View view) {
+    public void decodeJson(String userRes,View view,String message) {
         try {
             JSONObject root = new JSONObject(userRes);
             JSONArray rootArray = root.getJSONArray("results");
@@ -30,7 +30,7 @@ public class DecodeJson {
                 String age = jsonObject.getString("age");
                 String sex = jsonObject.getString("sex");
                 synchronized (gcm) {
-                    new GCM_SERVER(gcm);
+                    new GCM_SERVER(gcm,message);
                 }
             }
 

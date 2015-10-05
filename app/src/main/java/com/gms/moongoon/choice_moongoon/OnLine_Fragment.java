@@ -71,18 +71,18 @@ public class OnLine_Fragment extends Fragment implements View.OnClickListener {
     }
 
     private void init() {
-        imageView = (ImageView) view.findViewById(R.id.backGround_online);
+//        imageView = (ImageView) view.findViewById(R.id.backGround_online);
+//
+//        character_online = (ImageView) view.findViewById(R.id.character_online);
+//
+//        character_online_frameAnimationDrawable = (AnimationDrawable) character_online.getDrawable();
+//        character_online_frameAnimationDrawable.start();
 
-        character_online = (ImageView) view.findViewById(R.id.character_online);
-
-        character_online_frameAnimationDrawable = (AnimationDrawable) character_online.getDrawable();
-        character_online_frameAnimationDrawable.start();
-
-        fish_online = (ImageView) view.findViewById(R.id.fish_online);
-        fish_online.setBackgroundResource(R.drawable.fish_anim);
-
-        fish_online_frameAnimationDrawable = (AnimationDrawable) fish_online.getBackground();
-        fish_online_frameAnimationDrawable.start();
+//        fish_online = (ImageView) view.findViewById(R.id.fish_online);
+//        fish_online.setBackgroundResource(R.drawable.fish_anim);
+//
+//        fish_online_frameAnimationDrawable = (AnimationDrawable) fish_online.getBackground();
+//        fish_online_frameAnimationDrawable.start();
 
         mainSend = (Button) view.findViewById(R.id.main_send);
         mainSend.setOnClickListener(this);

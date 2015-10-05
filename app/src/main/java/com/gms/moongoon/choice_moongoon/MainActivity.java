@@ -267,8 +267,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         switch (resultCode) {
             case 0:
 
-                data.getExtras().getString("res");
-                new DecodeJson().decodeJson(MainActivity.userRes, view);
+//                data.getExtras().getString("res");
+                new DecodeJson().decodeJson(MainActivity.userRes, view, data.getExtras().getString("res"));
                 break;
         }
 

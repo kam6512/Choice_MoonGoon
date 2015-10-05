@@ -15,18 +15,17 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_below="@+id/toolbar"
-            app:primaryColor="#444153"
             app:accentColor="#ffc400"
-            app:hasIcons="true" />
+            app:hasIcons="true"
+            app:primaryColor="#444153" />
     </android.support.v7.widget.Toolbar>
-
-
-
 
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tabHost" />
+        android:layout_below="@+id/tabHost"></android.support.v4.view.ViewPager>
+
+
 </LinearLayout>

@@ -22,10 +22,15 @@ public class GCM_SERVER {
     private String token = null;
     private String API = null;
     private String arg1 = null;
+    private String arg2 = null;
+    private String message = null;
+    private boolean isQuestion;
 
-    public GCM_SERVER(String token){
+    public GCM_SERVER(String token,String message,boolean isQuestion){
         API = "AIzaSyChGfoWsxgpkc74g8Bx0Zd_naAumBAQ5_0";
         this.token = token;
+        this.message = message;
+        this.isQuestion = isQuestion;
 //        token = "e-siVUhNN1E:APA91bFxWcrKPWl40uMZQafcw2uVXSBhscUPPngZTf0GTLkKmrCTW_ca8JjMgacb0L1nAyfeqZrDVYwpJJwpNbOGkMlEGnryHKr72zCwXpIbUFQP6iHjtqeMUCytDULIFd9YOYlLd4LM";
         PostThread postThread = new PostThread();
         postThread.start();
@@ -36,14 +41,20 @@ public class GCM_SERVER {
         @Override
         public void run() {
             try {
-                arg1 = "kam6512";
+                arg1 = message;
                 arg1 = URLEncoder.encode(arg1,"UTF-8");
+                if (isQuestion){
+                    arg2 = "yes";
+                }else {
+                    arg2 = "no";
+                }
+
             }catch (Exception e){
 
             }
             Sender sender = new Sender(API);
 
-            com.google.android.gcm.server.Message message = new com.google.android.gcm.server.Message.Builder().addData("msg", arg1).build();
+            com.google.android.gcm.server.Message message = new com.google.android.gcm.server.Message.Builder().addData("msg", arg1).addData("isQuestion",arg2).build();
             List<String> list = new ArrayList<String>();
             list.add(token);
 

@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
 /**
@@ -22,9 +24,21 @@ public class OffLine_Fragment extends Fragment {
 
     View view;
 
+    ImageView inside,outside;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.offline, container, false);
+
+        inside = (ImageView)view.findViewById(R.id.spinner_inside);
+        outside = (ImageView)view.findViewById(R.id.spinner_outside);
+
+        RotateAnimation rotateAnimation = new RotateAnimation(0f,35f,15f,15f);
+        rotateAnimation.setInterpolator(new LinearInterpolator());
+        rotateAnimation.setRepeatCount(4);
+        rotateAnimation.setDuration(10000);
+
+        inside.startAnimation(rotateAnimation);
 
 
         view.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
