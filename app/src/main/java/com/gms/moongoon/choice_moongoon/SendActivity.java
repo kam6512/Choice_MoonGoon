@@ -89,6 +89,7 @@ public class SendActivity extends Activity {
             @Override
             public void onClick(View view) {
                 sendExtra.putString("res",secretMatchingTextView.getText().toString());
+                sendExtra.putBoolean("isQuestion",true);
                 sendIntent.putExtras(sendExtra);
                 setResult(0,sendIntent);
                 finish();
