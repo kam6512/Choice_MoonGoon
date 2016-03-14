@@ -1,8 +1,7 @@
 # Choice_MoonGoon
 start by kam6512
 
-본 프로젝트는 2015년 4월 경기모바일과학고등학교(이하 GMS) 3학년 강영원,민대홍 군이 제작한 안드로이드 어플리케이션입니다.
-익명 질문/답변 서비스로 12월까지 개발 완료를 목표로 하고 있습니다.
+https://github.com/hamasang/Choice_MoonGoon-1 를 확인해 주세요.
 ---
 
 # License
